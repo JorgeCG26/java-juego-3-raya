@@ -6,6 +6,7 @@ import javax.swing.JButton;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     private boolean casilla[][] = new boolean[3][3];
+    private int matriz[][] = new int[3][3];
 
     private String turno = "usuario1";
 
@@ -14,6 +15,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setSize(600, 600);
         setLocationRelativeTo(null);
         iniciarCasillas();
+        iniciarMatriz();
     }
 
     private void dibujarFiguraX(JButton boton) {
@@ -24,10 +26,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/o.png")));
     }
 
+    // Inicializar toda mis casillas del tablero en TRUE
     private void iniciarCasillas() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 casilla[i][j] = true;
+            }
+        }
+    }
+
+    // Inicializa la matriz de juego con valores vacíos
+    private void iniciarMatriz() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz[i][j] = 0;
             }
         }
     }
@@ -205,15 +217,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuSalirActionPerformed
 
     private void botonArribaIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArribaIzquierdaActionPerformed
+        // Verifica que la casilla no haya sido utilizada previamente
         if (casilla[0][0] == true) {
+            // Coloca la ficha del jugador actual y cambia el turno
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonArribaIzquierda);
                 turno = "usuario2";
+
+                // Guarda la jugada del jugador X
+                matriz[0][0] = 1;
             } else {
                 dibujarFiguraO(botonArribaIzquierda);
                 turno = "usuario1";
+
+                // Guarda la jugada del jugador O
+                matriz[0][0] = 2;
             }
 
+            // Marca la casilla como ocupada para impedir modificaciones
             casilla[0][0] = false;
         }
     }//GEN-LAST:event_botonArribaIzquierdaActionPerformed
@@ -223,9 +244,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonArriba);
                 turno = "usuario2";
+                matriz[0][1] = 1;
             } else {
                 dibujarFiguraO(botonArriba);
                 turno = "usuario1";
+                matriz[0][1] = 2;
             }
 
             casilla[0][1] = false;
@@ -237,9 +260,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonArribaDerecha);
                 turno = "usuario2";
+                matriz[0][2] = 1;
             } else {
                 dibujarFiguraO(botonArribaDerecha);
                 turno = "usuario1";
+                matriz[0][2] = 2;
             }
 
             casilla[0][2] = false;
@@ -251,9 +276,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonIzquierda);
                 turno = "usuario2";
+                matriz[1][0] = 1;
             } else {
                 dibujarFiguraO(botonIzquierda);
                 turno = "usuario1";
+                matriz[1][0] = 2;
             }
 
             casilla[1][0] = false;
@@ -265,9 +292,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonCentro);
                 turno = "usuario2";
+                matriz[1][1] = 1;
             } else {
                 dibujarFiguraO(botonCentro);
                 turno = "usuario1";
+                matriz[1][1] = 2;
             }
 
             casilla[1][1] = false;
@@ -279,9 +308,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonDerecha);
                 turno = "usuario2";
+                matriz[1][2] = 1;
             } else {
                 dibujarFiguraO(botonDerecha);
                 turno = "usuario1";
+                matriz[1][2] = 2;
             }
 
             casilla[1][2] = false;
@@ -293,9 +324,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonAbajoIzquierda);
                 turno = "usuario2";
+                matriz[2][0] = 1;
             } else {
                 dibujarFiguraO(botonAbajoIzquierda);
                 turno = "usuario1";
+                matriz[2][0] = 2;
             }
 
             casilla[2][0] = false;
@@ -307,9 +340,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonAbajo);
                 turno = "usuario2";
+                matriz[2][1] = 1;
             } else {
                 dibujarFiguraO(botonAbajo);
                 turno = "usuario1";
+                matriz[2][1] = 2;
             }
 
             casilla[2][1] = false;
@@ -321,9 +356,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (turno.equals("usuario1")) {
                 dibujarFiguraX(botonAbajoDerecha);
                 turno = "usuario2";
+                matriz[2][2] = 1;
             } else {
                 dibujarFiguraO(botonAbajoDerecha);
                 turno = "usuario1";
+                matriz[2][2] = 2;
             }
 
             casilla[2][2] = false;
