@@ -4,13 +4,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+    
+    private String turno = "usuario1";
+    
     public VentanaPrincipal() {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
     }
-
+    
     private void dibujarFiguraX(JButton boton) {
         boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/x.png")));
     }
@@ -48,9 +50,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panel.setLayout(new java.awt.GridLayout(3, 3));
 
         botonArribaIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonArribaIzquierda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonArribaIzquierdaActionPerformed(evt);
+            }
+        });
         panel.add(botonArribaIzquierda);
 
         botonArriba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonArriba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonArribaActionPerformed(evt);
+            }
+        });
         panel.add(botonArriba);
 
         botonArribaDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -83,17 +95,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuReiniciarPartida.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         menuReiniciarPartida.setText("Reiniciar partida");
         menuReiniciarPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuReiniciarPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuReiniciarPartidaActionPerformed(evt);
+            }
+        });
         menuJuego.add(menuReiniciarPartida);
 
         menuResultados.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         menuResultados.setText("Mostrar resultados");
         menuResultados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuResultados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuResultadosActionPerformed(evt);
+            }
+        });
         menuJuego.add(menuResultados);
         menuJuego.add(separador);
 
         menuSalir.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         menuSalir.setText("Salir");
         menuSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSalirActionPerformed(evt);
+            }
+        });
         menuJuego.add(menuSalir);
 
         barraMenu.add(menuJuego);
@@ -118,6 +145,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuReiniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReiniciarPartidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuReiniciarPartidaActionPerformed
+
+    private void menuResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuResultadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuResultadosActionPerformed
+
+    private void menuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_menuSalirActionPerformed
+
+    private void botonArribaIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArribaIzquierdaActionPerformed
+        if (turno.equals("usuario1")) {
+            dibujarFiguraX(botonArribaIzquierda);
+            turno = "usuario2";
+        } else {
+            dibujarFiguraO(botonArribaIzquierda);
+            turno = "usuario1";
+        }
+    }//GEN-LAST:event_botonArribaIzquierdaActionPerformed
+
+    private void botonArribaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArribaActionPerformed
+        if (turno.equals("usuario1")) {
+            dibujarFiguraX(botonArriba);
+            turno = "usuario2";
+        } else {
+            dibujarFiguraO(botonArriba);
+            turno = "usuario1";
+        }
+    }//GEN-LAST:event_botonArribaActionPerformed
 
     /**
      * @param args the command line arguments
