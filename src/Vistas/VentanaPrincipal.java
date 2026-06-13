@@ -77,24 +77,59 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panel.add(botonArriba);
 
         botonArribaDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonArribaDerecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonArribaDerechaActionPerformed(evt);
+            }
+        });
         panel.add(botonArribaDerecha);
 
         botonIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonIzquierda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIzquierdaActionPerformed(evt);
+            }
+        });
         panel.add(botonIzquierda);
 
         botonCentro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonCentro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCentroActionPerformed(evt);
+            }
+        });
         panel.add(botonCentro);
 
         botonDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonDerecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDerechaActionPerformed(evt);
+            }
+        });
         panel.add(botonDerecha);
 
         botonAbajoIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonAbajoIzquierda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAbajoIzquierdaActionPerformed(evt);
+            }
+        });
         panel.add(botonAbajoIzquierda);
 
         botonAbajo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonAbajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAbajoActionPerformed(evt);
+            }
+        });
         panel.add(botonAbajo);
 
         botonAbajoDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botonAbajoDerecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAbajoDerechaActionPerformed(evt);
+            }
+        });
         panel.add(botonAbajoDerecha);
 
         barraMenu.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -178,7 +213,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 dibujarFiguraO(botonArribaIzquierda);
                 turno = "usuario1";
             }
-            
+
             casilla[0][0] = false;
         }
     }//GEN-LAST:event_botonArribaIzquierdaActionPerformed
@@ -192,10 +227,108 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 dibujarFiguraO(botonArriba);
                 turno = "usuario1";
             }
-            
+
             casilla[0][1] = false;
         }
     }//GEN-LAST:event_botonArribaActionPerformed
+
+    private void botonArribaDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArribaDerechaActionPerformed
+        if (casilla[0][2] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonArribaDerecha);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonArribaDerecha);
+                turno = "usuario1";
+            }
+
+            casilla[0][2] = false;
+        }
+    }//GEN-LAST:event_botonArribaDerechaActionPerformed
+
+    private void botonIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIzquierdaActionPerformed
+        if (casilla[1][0] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonIzquierda);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonIzquierda);
+                turno = "usuario1";
+            }
+
+            casilla[1][0] = false;
+        }
+    }//GEN-LAST:event_botonIzquierdaActionPerformed
+
+    private void botonCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCentroActionPerformed
+        if (casilla[1][1] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonCentro);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonCentro);
+                turno = "usuario1";
+            }
+
+            casilla[1][1] = false;
+        }
+    }//GEN-LAST:event_botonCentroActionPerformed
+
+    private void botonDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDerechaActionPerformed
+        if (casilla[1][2] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonDerecha);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonDerecha);
+                turno = "usuario1";
+            }
+
+            casilla[1][2] = false;
+        }
+    }//GEN-LAST:event_botonDerechaActionPerformed
+
+    private void botonAbajoIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAbajoIzquierdaActionPerformed
+        if (casilla[2][0] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonAbajoIzquierda);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonAbajoIzquierda);
+                turno = "usuario1";
+            }
+
+            casilla[2][0] = false;
+        }
+    }//GEN-LAST:event_botonAbajoIzquierdaActionPerformed
+
+    private void botonAbajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAbajoActionPerformed
+        if (casilla[2][1] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonAbajo);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonAbajo);
+                turno = "usuario1";
+            }
+
+            casilla[2][1] = false;
+        }
+    }//GEN-LAST:event_botonAbajoActionPerformed
+
+    private void botonAbajoDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAbajoDerechaActionPerformed
+        if (casilla[2][2] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonAbajoDerecha);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonAbajoDerecha);
+                turno = "usuario1";
+            }
+
+            casilla[2][2] = false;
+        }
+    }//GEN-LAST:event_botonAbajoDerechaActionPerformed
 
     /**
      * @param args the command line arguments

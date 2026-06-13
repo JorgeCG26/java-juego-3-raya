@@ -148,6 +148,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonArribaDerechaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonIzquierda">
           <Properties>
@@ -155,6 +158,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIzquierdaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonCentro">
           <Properties>
@@ -162,6 +168,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCentroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonDerecha">
           <Properties>
@@ -169,6 +178,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonDerechaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonAbajoIzquierda">
           <Properties>
@@ -176,6 +188,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAbajoIzquierdaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonAbajo">
           <Properties>
@@ -183,6 +198,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAbajoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonAbajoDerecha">
           <Properties>
@@ -190,6 +208,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAbajoDerechaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
