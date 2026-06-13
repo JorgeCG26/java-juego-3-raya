@@ -236,6 +236,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
             // Marca la casilla como ocupada para impedir modificaciones
             casilla[0][0] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonArribaIzquierdaActionPerformed
 
@@ -252,6 +253,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[0][1] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonArribaActionPerformed
 
@@ -268,6 +270,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[0][2] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonArribaDerechaActionPerformed
 
@@ -284,6 +287,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[1][0] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonIzquierdaActionPerformed
 
@@ -300,6 +304,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[1][1] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonCentroActionPerformed
 
@@ -316,6 +321,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[1][2] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonDerechaActionPerformed
 
@@ -332,6 +338,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[2][0] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonAbajoIzquierdaActionPerformed
 
@@ -348,6 +355,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[2][1] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonAbajoActionPerformed
 
@@ -364,6 +372,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             casilla[2][2] = false;
+            mostrarGanador();
         }
     }//GEN-LAST:event_botonAbajoDerechaActionPerformed
 
@@ -373,6 +382,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         ganador1 = comprobarGanador(1);
         ganador2 = comprobarGanador(2);
+
+        if (ganador1 == true) {
+            System.out.println("Ganó el usuario 1");
+            reiniciarJuego();
+        } else if (ganador2 == true) {
+            System.out.println("Ganó el usuario 2");
+            reiniciarJuego();
+        }
     }
 
     private boolean comprobarGanador(int numero) {
@@ -399,6 +416,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         return ganador;
     }
 
+    private void reiniciarJuego() {
+        iniciarCasillas();
+        iniciarMatriz();
+        
+        botonArribaIzquierda.setIcon(null);
+        botonArriba.setIcon(null);
+        botonArribaDerecha.setIcon(null);
+        
+        botonIzquierda.setIcon(null);
+        botonCentro.setIcon(null);
+        botonDerecha.setIcon(null);
+        
+        botonAbajoIzquierda.setIcon(null);
+        botonAbajo.setIcon(null);
+        botonAbajoDerecha.setIcon(null);
+    }
+    
     /**
      * @param args the command line arguments
      */
