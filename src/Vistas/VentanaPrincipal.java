@@ -367,6 +367,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonAbajoDerechaActionPerformed
 
+    private void mostrarGanador() {
+        boolean ganador1 = false;
+        boolean ganador2 = false;
+
+        ganador1 = comprobarGanador(1);
+        ganador2 = comprobarGanador(2);
+    }
+
+    private boolean comprobarGanador(int numero) {
+        boolean ganador = false;
+
+        if (matriz[0][0] == numero && matriz[0][1] == numero && matriz[0][2] == numero) {
+            ganador = true;
+        } else if (matriz[1][0] == numero && matriz[1][1] == numero && matriz[1][2] == numero) {
+            ganador = true;
+        } else if (matriz[2][0] == numero && matriz[2][1] == numero && matriz[2][2] == numero) {
+            ganador = true;
+        } else if (matriz[0][0] == numero && matriz[1][0] == numero && matriz[2][0] == numero) {
+            ganador = true;
+        } else if (matriz[0][1] == numero && matriz[1][1] == numero && matriz[2][1] == numero) {
+            ganador = true;
+        } else if (matriz[0][2] == numero && matriz[1][2] == numero && matriz[2][2] == numero) {
+            ganador = true;
+        } else if (matriz[0][0] == numero && matriz[1][1] == numero && matriz[2][2] == numero) {
+            ganador = true;
+        } else if (matriz[2][0] == numero && matriz[1][1] == numero && matriz[0][2] == numero) {
+            ganador = true;
+        }
+
+        return ganador;
+    }
+
     /**
      * @param args the command line arguments
      */
