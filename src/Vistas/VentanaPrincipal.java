@@ -4,23 +4,34 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
-    
+
+    private boolean casilla[][] = new boolean[3][3];
+
     private String turno = "usuario1";
-    
+
     public VentanaPrincipal() {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
+        iniciarCasillas();
     }
-    
+
     private void dibujarFiguraX(JButton boton) {
         boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/x.png")));
     }
-    
+
     private void dibujarFiguraO(JButton boton) {
         boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/o.png")));
     }
-    
+
+    private void iniciarCasillas() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                casilla[i][j] = true;
+            }
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -159,22 +170,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuSalirActionPerformed
 
     private void botonArribaIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArribaIzquierdaActionPerformed
-        if (turno.equals("usuario1")) {
-            dibujarFiguraX(botonArribaIzquierda);
-            turno = "usuario2";
-        } else {
-            dibujarFiguraO(botonArribaIzquierda);
-            turno = "usuario1";
+        if (casilla[0][0] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonArribaIzquierda);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonArribaIzquierda);
+                turno = "usuario1";
+            }
+            
+            casilla[0][0] = false;
         }
     }//GEN-LAST:event_botonArribaIzquierdaActionPerformed
 
     private void botonArribaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArribaActionPerformed
-        if (turno.equals("usuario1")) {
-            dibujarFiguraX(botonArriba);
-            turno = "usuario2";
-        } else {
-            dibujarFiguraO(botonArriba);
-            turno = "usuario1";
+        if (casilla[0][1] == true) {
+            if (turno.equals("usuario1")) {
+                dibujarFiguraX(botonArriba);
+                turno = "usuario2";
+            } else {
+                dibujarFiguraO(botonArriba);
+                turno = "usuario1";
+            }
+            
+            casilla[0][1] = false;
         }
     }//GEN-LAST:event_botonArribaActionPerformed
 
