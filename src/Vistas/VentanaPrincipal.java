@@ -1,5 +1,8 @@
 package Vistas;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     public VentanaPrincipal() {
@@ -8,6 +11,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
+    private void dibujarFiguraX(JButton boton) {
+        boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/x.png")));
+    }
+    
+    private void dibujarFiguraO(JButton boton) {
+        boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/o.png")));
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
