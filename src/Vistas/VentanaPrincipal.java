@@ -9,6 +9,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private int matriz[][] = new int[3][3];
 
     private String turno = "usuario1";
+    private int contadorEmpate = 0;
 
     public VentanaPrincipal() {
         initComponents();
@@ -389,6 +390,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else if (ganador2 == true) {
             System.out.println("Ganó el usuario 2");
             reiniciarJuego();
+        } else {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (matriz[i][j] != 0) {
+                        contadorEmpate++;
+                    }
+                }
+            }
+
+            if (contadorEmpate == 9) {
+                System.out.println("Empate");
+                reiniciarJuego();
+            } else {
+                contadorEmpate = 0;
+            }
         }
     }
 
@@ -419,20 +435,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void reiniciarJuego() {
         iniciarCasillas();
         iniciarMatriz();
-        
+
         botonArribaIzquierda.setIcon(null);
         botonArriba.setIcon(null);
         botonArribaDerecha.setIcon(null);
-        
+
         botonIzquierda.setIcon(null);
         botonCentro.setIcon(null);
         botonDerecha.setIcon(null);
-        
+
         botonAbajoIzquierda.setIcon(null);
         botonAbajo.setIcon(null);
         botonAbajoDerecha.setIcon(null);
     }
-    
+
     /**
      * @param args the command line arguments
      */
