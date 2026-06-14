@@ -27,6 +27,7 @@ public class VentanaInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("3 en Raya");
 
+        panel.setBackground(new java.awt.Color(255, 255, 255));
         panel.setToolTipText("3 en Raya");
 
         etiquetaTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -45,6 +46,7 @@ public class VentanaInicial extends javax.swing.JFrame {
 
         botonGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         botonGuardar.setText("GUARDAR JUGADORES");
+        botonGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarActionPerformed(evt);

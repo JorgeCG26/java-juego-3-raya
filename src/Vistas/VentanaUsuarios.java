@@ -11,18 +11,58 @@ public class VentanaUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel = new javax.swing.JPanel();
+        etiquetaTitulo = new javax.swing.JLabel();
+        etiquetaUsuario2 = new javax.swing.JLabel();
+        etiquetaUsuario1 = new javax.swing.JLabel();
+        etiquetaImagen = new javax.swing.JLabel();
+        botonComenzar = new javax.swing.JButton();
+        botonRetroceder = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("3 en Raya");
+        setTitle("Presentación Jugadores");
+        setResizable(false);
+
+        panel.setBackground(new java.awt.Color(255, 255, 255));
+        panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        etiquetaTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaTitulo.setText("Jorge VS Antonella");
+        panel.add(etiquetaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 240, -1));
+
+        etiquetaUsuario2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        etiquetaUsuario2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaUsuario2.setText("Antonella con figura O");
+        panel.add(etiquetaUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 240, -1));
+
+        etiquetaUsuario1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        etiquetaUsuario1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaUsuario1.setText("Jorge empieza con figura X");
+        panel.add(etiquetaUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 240, -1));
+
+        etiquetaImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/3EnRaya.gif"))); // NOI18N
+        panel.add(etiquetaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
+        botonComenzar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botonComenzar.setText("Comenzar");
+        botonComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel.add(botonComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 40));
+
+        botonRetroceder.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botonRetroceder.setText("Retroceder");
+        botonRetroceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel.add(botonRetroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
         );
 
         pack();
@@ -64,5 +104,12 @@ public class VentanaUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonComenzar;
+    private javax.swing.JButton botonRetroceder;
+    private javax.swing.JLabel etiquetaImagen;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel etiquetaUsuario1;
+    private javax.swing.JLabel etiquetaUsuario2;
+    private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
