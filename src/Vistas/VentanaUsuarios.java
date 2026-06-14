@@ -2,7 +2,13 @@ package Vistas;
 
 public class VentanaUsuarios extends javax.swing.JFrame {
 
-    public VentanaUsuarios() {
+    private String usuarioUno;
+    private String usuarioDos;
+
+    public VentanaUsuarios(String usuarioUno, String usuarioDos) {
+        this.usuarioUno = usuarioUno;
+        this.usuarioDos = usuarioDos;
+        
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -28,30 +34,44 @@ public class VentanaUsuarios extends javax.swing.JFrame {
 
         etiquetaTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiquetaTitulo.setText("Jorge VS Antonella");
+        etiquetaTitulo.setText(usuarioUno + " VS " + usuarioDos);
         panel.add(etiquetaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 240, -1));
 
         etiquetaUsuario2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         etiquetaUsuario2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiquetaUsuario2.setText("Antonella con figura O");
+        etiquetaUsuario2.setText(usuarioDos + " con figura O");
         panel.add(etiquetaUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 240, -1));
 
         etiquetaUsuario1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         etiquetaUsuario1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiquetaUsuario1.setText("Jorge empieza con figura X");
+        etiquetaUsuario1.setText(usuarioUno + " empieza con figura X");
         panel.add(etiquetaUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 240, -1));
 
         etiquetaImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/3EnRaya.gif"))); // NOI18N
         panel.add(etiquetaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
+        botonComenzar.setBackground(new java.awt.Color(0, 0, 204));
         botonComenzar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botonComenzar.setForeground(new java.awt.Color(255, 255, 255));
         botonComenzar.setText("Comenzar");
         botonComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonComenzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonComenzarActionPerformed(evt);
+            }
+        });
         panel.add(botonComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 40));
 
+        botonRetroceder.setBackground(new java.awt.Color(255, 0, 0));
         botonRetroceder.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botonRetroceder.setForeground(new java.awt.Color(255, 255, 255));
         botonRetroceder.setText("Retroceder");
         botonRetroceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonRetroceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRetrocederActionPerformed(evt);
+            }
+        });
         panel.add(botonRetroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -67,6 +87,20 @@ public class VentanaUsuarios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComenzarActionPerformed
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        ventanaPrincipal.setVisible(true);
+        
+        dispose();
+    }//GEN-LAST:event_botonComenzarActionPerformed
+
+    private void botonRetrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRetrocederActionPerformed
+        VentanaInicial ventanaInicial = new VentanaInicial();
+        ventanaInicial.setVisible(true);
+        
+        dispose();
+    }//GEN-LAST:event_botonRetrocederActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,7 +132,7 @@ public class VentanaUsuarios extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaUsuarios().setVisible(true);
+                new VentanaUsuarios(null, null).setVisible(true);
             }
         });
     }

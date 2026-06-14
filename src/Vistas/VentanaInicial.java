@@ -35,10 +35,10 @@ public class VentanaInicial extends javax.swing.JFrame {
         etiquetaTitulo.setText("JUEGO 3 EN RAYA");
 
         etiquetaUsuario1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        etiquetaUsuario1.setText("Usuario 1");
+        etiquetaUsuario1.setText("Nombre usuario 1:");
 
         etiquetaUsuario2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        etiquetaUsuario2.setText("Usuario 2");
+        etiquetaUsuario2.setText("Nombre usuario 2:");
 
         campoUsuario1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
@@ -108,7 +108,7 @@ public class VentanaInicial extends javax.swing.JFrame {
         if (usuarioUno.isEmpty() || usuarioDos.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese bien los nombre de los jugadores", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
-            VentanaUsuarios ventanaUsuario = new VentanaUsuarios();
+            VentanaUsuarios ventanaUsuario = new VentanaUsuarios(usuarioUno, usuarioDos);
             ventanaUsuario.setVisible(true);
 
             dispose();
