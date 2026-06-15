@@ -1,5 +1,6 @@
 package Vistas;
 
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 public class VentanaResultados extends javax.swing.JDialog {
@@ -21,6 +22,7 @@ public class VentanaResultados extends javax.swing.JDialog {
         this.usuarioUno = usuarioUno;
         this.usuarioDos = usuarioDos;
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
         iniciarTabla();
         setLocationRelativeTo(null);
     }

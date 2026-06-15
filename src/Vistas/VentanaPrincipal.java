@@ -23,6 +23,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
         iniciarCasillas();
         iniciarMatriz();
         this.usuarioUno = usuarioUno;
@@ -81,9 +82,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("3 en Raya");
         setResizable(false);
 
-        panel.setBackground(new java.awt.Color(255, 255, 255));
+        panel.setBackground(new java.awt.Color(204, 204, 204));
         panel.setLayout(new java.awt.GridLayout(3, 3));
 
+        botonArribaIzquierda.setBackground(new java.awt.Color(255, 255, 255));
         botonArribaIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonArribaIzquierda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +94,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonArribaIzquierda);
 
+        botonArriba.setBackground(new java.awt.Color(255, 255, 255));
         botonArriba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonArriba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +103,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonArriba);
 
+        botonArribaDerecha.setBackground(new java.awt.Color(255, 255, 255));
         botonArribaDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonArribaDerecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +112,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonArribaDerecha);
 
+        botonIzquierda.setBackground(new java.awt.Color(255, 255, 255));
         botonIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonIzquierda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +121,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonIzquierda);
 
+        botonCentro.setBackground(new java.awt.Color(255, 255, 255));
         botonCentro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonCentro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +130,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonCentro);
 
+        botonDerecha.setBackground(new java.awt.Color(255, 255, 255));
         botonDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonDerecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +139,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonDerecha);
 
+        botonAbajoIzquierda.setBackground(new java.awt.Color(255, 255, 255));
         botonAbajoIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonAbajoIzquierda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,6 +148,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonAbajoIzquierda);
 
+        botonAbajo.setBackground(new java.awt.Color(255, 255, 255));
         botonAbajo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonAbajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +157,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panel.add(botonAbajo);
 
+        botonAbajoDerecha.setBackground(new java.awt.Color(255, 255, 255));
         botonAbajoDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonAbajoDerecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

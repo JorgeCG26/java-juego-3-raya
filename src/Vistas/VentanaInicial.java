@@ -1,5 +1,6 @@
 package Vistas;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class VentanaInicial extends javax.swing.JFrame {
@@ -9,6 +10,7 @@ public class VentanaInicial extends javax.swing.JFrame {
 
     public VentanaInicial() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
         setLocationRelativeTo(null);
     }
 

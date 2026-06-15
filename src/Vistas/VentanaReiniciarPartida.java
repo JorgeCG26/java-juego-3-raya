@@ -1,5 +1,7 @@
 package Vistas;
 
+import javax.swing.ImageIcon;
+
 public class VentanaReiniciarPartida extends javax.swing.JDialog {
 
     private String turno;
@@ -8,6 +10,7 @@ public class VentanaReiniciarPartida extends javax.swing.JDialog {
         super(parent, modal);
         this.turno = turno;
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
         setLocationRelativeTo(null);
     }
 
@@ -21,6 +24,7 @@ public class VentanaReiniciarPartida extends javax.swing.JDialog {
         botonUsuario2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("3 en Raya - Reiniciar Juego");
 
         panel.setBackground(new java.awt.Color(255, 255, 255));
 

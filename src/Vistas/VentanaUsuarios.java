@@ -1,5 +1,7 @@
 package Vistas;
 
+import javax.swing.ImageIcon;
+
 public class VentanaUsuarios extends javax.swing.JFrame {
 
     private String usuarioUno;
@@ -10,6 +12,7 @@ public class VentanaUsuarios extends javax.swing.JFrame {
         this.usuarioDos = usuarioDos;
         
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
         setLocationRelativeTo(null);
     }
 

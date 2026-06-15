@@ -1,10 +1,13 @@
 package Vistas;
 
+import javax.swing.ImageIcon;
+
 public class VentanaEmpate extends javax.swing.JDialog {
 
     public VentanaEmpate(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
         setLocationRelativeTo(null);
     }
 
@@ -17,6 +20,7 @@ public class VentanaEmpate extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("3 en Raya - Empate");
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empateRojoAzul.png"))); // NOI18N
 
