@@ -222,11 +222,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             ventanaReiniciarPartida.setVisible(true);
 
             turno = ventanaReiniciarPartida.getTurno();
+            
+            empate = 0;
+            victoriaRojo = 0;
+            victoriaAzul = 0;
         }
     }//GEN-LAST:event_menuReiniciarPartidaActionPerformed
 
     private void menuResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuResultadosActionPerformed
-        VentanaResultados ventanaResultados = new VentanaResultados(this, true, empate, victoriaRojo, victoriaAzul);
+        VentanaResultados ventanaResultados = new VentanaResultados(this, true, empate, victoriaRojo, victoriaAzul, usuarioUno, usuarioDos);
         ventanaResultados.setVisible(true);
     }//GEN-LAST:event_menuResultadosActionPerformed
 

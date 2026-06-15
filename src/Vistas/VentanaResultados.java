@@ -9,20 +9,25 @@ public class VentanaResultados extends javax.swing.JDialog {
     private int empate = 0;
     private int victoriaRojo = 0;
     private int victoriaAzul = 0;
+    
+    private String usuarioUno;
+    private String usuarioDos;
 
-    public VentanaResultados(java.awt.Frame parent, boolean modal, int empate, int victoriaRojo, int victoriaAzul) {
+    public VentanaResultados(java.awt.Frame parent, boolean modal, int empate, int victoriaRojo, int victoriaAzul, String usuarioUno, String usuarioDos) {
         super(parent, modal);
         this.empate = empate;
         this.victoriaRojo = victoriaRojo;
         this.victoriaAzul = victoriaAzul;
+        this.usuarioUno = usuarioUno;
+        this.usuarioDos = usuarioDos;
         initComponents();
         iniciarTabla();
         setLocationRelativeTo(null);
     }
 
     private void iniciarTabla() {
-        modeloTabla.addColumn("Victoria Rojo");
-        modeloTabla.addColumn("Victoria Azul");
+        modeloTabla.addColumn("Victoria Rojo " + "(" + usuarioUno + ")");
+        modeloTabla.addColumn("Victoria Azul " + "(" + usuarioDos + ")");
         modeloTabla.addColumn("Empate");
 
         String[] datos = {String.valueOf(victoriaRojo), String.valueOf(victoriaAzul), String.valueOf(empate)};
@@ -133,7 +138,7 @@ public class VentanaResultados extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                VentanaResultados dialog = new VentanaResultados(new javax.swing.JFrame(), true, 0, 0, 0);
+                VentanaResultados dialog = new VentanaResultados(new javax.swing.JFrame(), true, 0, 0, 0, null, null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
