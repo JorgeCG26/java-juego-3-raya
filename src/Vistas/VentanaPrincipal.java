@@ -451,6 +451,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         iniciarCasillas();
         iniciarMatriz();
         
+        turno = "usuario1";
+        
         botonArribaIzquierda.setIcon(null);
         botonArriba.setIcon(null);
         botonArribaDerecha.setIcon(null);

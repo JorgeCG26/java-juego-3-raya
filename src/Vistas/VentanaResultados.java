@@ -3,13 +3,13 @@ package Vistas;
 import javax.swing.table.DefaultTableModel;
 
 public class VentanaResultados extends javax.swing.JDialog {
-    
+
     DefaultTableModel modeloTabla = new DefaultTableModel();
-    
+
     private int empate = 0;
     private int victoriaRojo = 0;
     private int victoriaAzul = 0;
-    
+
     public VentanaResultados(java.awt.Frame parent, boolean modal, int empate, int victoriaRojo, int victoriaAzul) {
         super(parent, modal);
         this.empate = empate;
@@ -19,16 +19,16 @@ public class VentanaResultados extends javax.swing.JDialog {
         iniciarTabla();
         setLocationRelativeTo(null);
     }
-    
+
     private void iniciarTabla() {
         modeloTabla.addColumn("Victoria Rojo");
         modeloTabla.addColumn("Victoria Azul");
         modeloTabla.addColumn("Empate");
-        
+
         String[] datos = {String.valueOf(victoriaRojo), String.valueOf(victoriaAzul), String.valueOf(empate)};
         modeloTabla.addRow(datos);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -38,7 +38,6 @@ public class VentanaResultados extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         botonCerrar = new javax.swing.JButton();
-        botonVolverEmpezar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Mostrar Resultados");
@@ -54,9 +53,11 @@ public class VentanaResultados extends javax.swing.JDialog {
 
         botonCerrar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         botonCerrar.setText("Cerrar");
-
-        botonVolverEmpezar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        botonVolverEmpezar.setText("Volver Empezar");
+        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCerrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -64,15 +65,12 @@ public class VentanaResultados extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(etiquetaTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(botonVolverEmpezar)
-                        .addGap(66, 66, 66)
-                        .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -83,9 +81,7 @@ public class VentanaResultados extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonVolverEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -102,6 +98,10 @@ public class VentanaResultados extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonCerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,7 +147,6 @@ public class VentanaResultados extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCerrar;
-    private javax.swing.JButton botonVolverEmpezar;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
