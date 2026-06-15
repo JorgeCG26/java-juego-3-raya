@@ -12,7 +12,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private int contadorEmpate = 0;
     private String usuarioUno;
     private String usuarioDos;
-    
+
     public VentanaPrincipal(String usuarioUno, String usuarioDos) {
         initComponents();
         setSize(600, 600);
@@ -389,12 +389,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ganador2 = comprobarGanador(2);
 
         if (ganador1 == true) {
-            VentanaGanador ganador = new VentanaGanador(this, true);
+            VentanaGanador ganador = new VentanaGanador(this, true, ganador1, ganador2);
             ganador.setVisible(true);
             
             reiniciarJuego();
         } else if (ganador2 == true) {
-            System.out.println("Ganó el usuario: " + usuarioDos);
+            VentanaGanador ganador = new VentanaGanador(this, true, ganador1, ganador2);
+            ganador.setVisible(true);
+            
             reiniciarJuego();
         } else {
             for (int i = 0; i < 3; i++) {
@@ -406,7 +408,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
 
             if (contadorEmpate == 9) {
-                System.out.println("Empate");
+                VentanaEmpate ventanaEmpate = new VentanaEmpate(this, true);
+                ventanaEmpate.setVisible(true);
+                
                 reiniciarJuego();
             } else {
                 contadorEmpate = 0;
