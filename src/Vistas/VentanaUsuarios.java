@@ -89,7 +89,7 @@ public class VentanaUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComenzarActionPerformed
-        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarioUno, usuarioDos);
         ventanaPrincipal.setVisible(true);
         
         dispose();

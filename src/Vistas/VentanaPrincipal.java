@@ -10,13 +10,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private String turno = "usuario1";
     private int contadorEmpate = 0;
-
-    public VentanaPrincipal() {
+    private String usuarioUno;
+    private String usuarioDos;
+    
+    public VentanaPrincipal(String usuarioUno, String usuarioDos) {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
         iniciarCasillas();
         iniciarMatriz();
+        this.usuarioUno = usuarioUno;
+        this.usuarioDos = usuarioDos;
     }
 
     private void dibujarFiguraX(JButton boton) {
@@ -385,10 +389,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ganador2 = comprobarGanador(2);
 
         if (ganador1 == true) {
-            System.out.println("Ganó el usuario 1");
+            VentanaGanador ganador = new VentanaGanador(this, true);
+            ganador.setVisible(true);
+            
             reiniciarJuego();
         } else if (ganador2 == true) {
-            System.out.println("Ganó el usuario 2");
+            System.out.println("Ganó el usuario: " + usuarioDos);
             reiniciarJuego();
         } else {
             for (int i = 0; i < 3; i++) {
@@ -479,7 +485,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipal(null, null).setVisible(true);
             }
         });
     }
