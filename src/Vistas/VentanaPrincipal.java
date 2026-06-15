@@ -4,15 +4,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+    
     private boolean casilla[][] = new boolean[3][3];
     private int matriz[][] = new int[3][3];
-
+    
     private String turno = "usuario1";
     private int contadorEmpate = 0;
     private String usuarioUno;
     private String usuarioDos;
-
+    private int empate = 0;
+    private int victoriaRojo = 0;
+    private int victoriaAzul = 0;
+    
     public VentanaPrincipal(String usuarioUno, String usuarioDos) {
         initComponents();
         setSize(600, 600);
@@ -22,11 +25,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.usuarioUno = usuarioUno;
         this.usuarioDos = usuarioDos;
     }
-
+    
     private void dibujarFiguraX(JButton boton) {
         boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/x.png")));
     }
-
+    
     private void dibujarFiguraO(JButton boton) {
         boton.setIcon(new ImageIcon(getClass().getResource("/Imagenes/o.png")));
     }
@@ -48,7 +51,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -75,6 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("3 en Raya");
         setResizable(false);
 
+        panel.setBackground(new java.awt.Color(255, 255, 255));
         panel.setLayout(new java.awt.GridLayout(3, 3));
 
         botonArribaIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -214,7 +218,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuReiniciarPartidaActionPerformed
 
     private void menuResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuResultadosActionPerformed
-        // TODO add your handling code here:
+        VentanaResultados ventanaResultados = new VentanaResultados(this, true, empate, victoriaRojo, victoriaAzul);
+        ventanaResultados.setVisible(true);
     }//GEN-LAST:event_menuResultadosActionPerformed
 
     private void menuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSalirActionPerformed
@@ -256,7 +261,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[0][1] = 2;
             }
-
+            
             casilla[0][1] = false;
             mostrarGanador();
         }
@@ -273,7 +278,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[0][2] = 2;
             }
-
+            
             casilla[0][2] = false;
             mostrarGanador();
         }
@@ -290,7 +295,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[1][0] = 2;
             }
-
+            
             casilla[1][0] = false;
             mostrarGanador();
         }
@@ -307,7 +312,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[1][1] = 2;
             }
-
+            
             casilla[1][1] = false;
             mostrarGanador();
         }
@@ -324,7 +329,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[1][2] = 2;
             }
-
+            
             casilla[1][2] = false;
             mostrarGanador();
         }
@@ -341,7 +346,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[2][0] = 2;
             }
-
+            
             casilla[2][0] = false;
             mostrarGanador();
         }
@@ -358,7 +363,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[2][1] = 2;
             }
-
+            
             casilla[2][1] = false;
             mostrarGanador();
         }
@@ -375,28 +380,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 turno = "usuario1";
                 matriz[2][2] = 2;
             }
-
+            
             casilla[2][2] = false;
             mostrarGanador();
         }
     }//GEN-LAST:event_botonAbajoDerechaActionPerformed
-
+    
     private void mostrarGanador() {
         boolean ganador1 = false;
         boolean ganador2 = false;
-
+        
         ganador1 = comprobarGanador(1);
         ganador2 = comprobarGanador(2);
-
+        
         if (ganador1 == true) {
             VentanaGanador ganador = new VentanaGanador(this, true, ganador1, ganador2);
             ganador.setVisible(true);
-            
+            victoriaRojo++;
             reiniciarJuego();
         } else if (ganador2 == true) {
             VentanaGanador ganador = new VentanaGanador(this, true, ganador1, ganador2);
             ganador.setVisible(true);
-            
+            victoriaAzul++;
             reiniciarJuego();
         } else {
             for (int i = 0; i < 3; i++) {
@@ -406,21 +411,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     }
                 }
             }
-
+            
             if (contadorEmpate == 9) {
                 VentanaEmpate ventanaEmpate = new VentanaEmpate(this, true);
                 ventanaEmpate.setVisible(true);
-                
+                empate++;
                 reiniciarJuego();
             } else {
                 contadorEmpate = 0;
             }
         }
     }
-
+    
     private boolean comprobarGanador(int numero) {
         boolean ganador = false;
-
+        
         if (matriz[0][0] == numero && matriz[0][1] == numero && matriz[0][2] == numero) {
             ganador = true;
         } else if (matriz[1][0] == numero && matriz[1][1] == numero && matriz[1][2] == numero) {
@@ -438,22 +443,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else if (matriz[2][0] == numero && matriz[1][1] == numero && matriz[0][2] == numero) {
             ganador = true;
         }
-
+        
         return ganador;
     }
-
+    
     private void reiniciarJuego() {
         iniciarCasillas();
         iniciarMatriz();
-
+        
         botonArribaIzquierda.setIcon(null);
         botonArriba.setIcon(null);
         botonArribaDerecha.setIcon(null);
-
+        
         botonIzquierda.setIcon(null);
         botonCentro.setIcon(null);
         botonDerecha.setIcon(null);
-
+        
         botonAbajoIzquierda.setIcon(null);
         botonAbajo.setIcon(null);
         botonAbajoDerecha.setIcon(null);
