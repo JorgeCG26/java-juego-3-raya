@@ -29,7 +29,7 @@ public class VentanaUsuarios extends javax.swing.JFrame {
         botonRetroceder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Presentación Jugadores");
+        setTitle("Presentación de Jugadores");
         setResizable(false);
 
         panel.setBackground(new java.awt.Color(255, 255, 255));
