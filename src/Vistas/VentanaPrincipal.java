@@ -10,9 +10,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private int matriz[][] = new int[3][3];
 
     private String turno = "usuario1";
-    private int contadorEmpate = 0;
+    private String jugadorInicial = "usuario1";
     private String usuarioUno;
     private String usuarioDos;
+
+    private int contadorEmpate = 0;
     private int empate = 0;
     private int victoriaRojo = 0;
     private int victoriaAzul = 0;
@@ -222,7 +224,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             ventanaReiniciarPartida.setVisible(true);
 
             turno = ventanaReiniciarPartida.getTurno();
-            
+            jugadorInicial = turno;
+
             empate = 0;
             victoriaRojo = 0;
             victoriaAzul = 0;
@@ -463,7 +466,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         iniciarCasillas();
         iniciarMatriz();
 
-        turno = "usuario1";
+        turno = jugadorInicial;
 
         botonArribaIzquierda.setIcon(null);
         botonArriba.setIcon(null);
